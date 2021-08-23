@@ -1,21 +1,25 @@
 import React from 'react';
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Grid,
+  Flex,
   theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './components/ColorModeSwitcher/ColorModeSwitcher.component';
+
+import ColorModeSwitcher from './components/ColorModeSwitcher/ColorModeSwitcher.component';
+import TimerContainer from './components/TimerContainer/TimerContainer.component';
+import Title from './components/Title/Title.component';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-        </Grid>
-      </Box>
+      <Flex flexDirection="row" justifyContent="flex-end">
+        <ColorModeSwitcher justifySelf="end" />
+      </Flex>
+      <Flex flexDirection="column" justifyContent="center" alignItems="center">
+        <TimerContainer>
+          <Title size="lg" text="Chakradoro Timer" />
+        </TimerContainer>
+      </Flex>
     </ChakraProvider>
   );
 }
