@@ -1,12 +1,11 @@
 import { Box } from '@chakra-ui/react';
 
-const TimerContainer = ({ children }) => {
+const DataContainer = ({ children }) => {
     return (
         <Box 
           minW="30%"
           minH="50%"
           p="2.5em"
-          mx="auto"
           align="center"
           borderRadius="30px"
           border="2px"
@@ -18,4 +17,4 @@ const TimerContainer = ({ children }) => {
     );
 }
 
-export default TimerContainer;
+export default DataContainer;

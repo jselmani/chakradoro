@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 
 import ColorModeSwitcher from './components/ColorModeSwitcher/ColorModeSwitcher.component';
-import TimerContainer from './components/TimerContainer/TimerContainer.component';
+import DataContainer from './components/DataContainer/DataContainer.component';
 import Title from './components/Title/Title.component';
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
         <ColorModeSwitcher justifySelf="end" />
       </Flex>
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
-        <TimerContainer>
+        <DataContainer>
           <Title size="lg" text="Chakradoro Timer" />
-        </TimerContainer>
+        </DataContainer>
       </Flex>
     </ChakraProvider>
   );
