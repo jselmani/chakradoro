@@ -3,8 +3,6 @@ import { Box } from '@chakra-ui/react';
 const DataContainer = ({ children }) => {
     return (
         <Box 
-          minW="30%"
-          minH="50%"
           p="2.5em"
           align="center"
           borderRadius="30px"
