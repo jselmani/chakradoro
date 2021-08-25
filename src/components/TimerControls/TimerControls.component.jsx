@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { 
-    Box,
+    Flex,
     IconButton 
 } from '@chakra-ui/react';
 import { FaPlay, FaRedoAlt, FaPause } from "react-icons/fa";
@@ -82,9 +82,21 @@ const TimerControls = () => {
     });
 
     return (
-        <Box>
-            <IconButton onClick={handlePauseAndPlay} icon={!isBusy ? FaPlay : FaPause}/>
-        </Box>
+        <Flex flexDirection="row" justifyContent="space-evenly" alignContent="center" pt="10px">
+            <IconButton 
+                size="lg" 
+                isRound 
+                onClick={handlePauseAndPlay} 
+                icon={!isBusy ? <FaPlay /> : <FaPause />}
+            />
+            <IconButton 
+                size="lg" 
+                isRound 
+                onClick={handleReset} 
+                icon={<FaRedoAlt />}
+            />
+            <audio src={notificationUrl} ref={notificationRef} preload="auto" />
+        </Flex>
     );
 
 }
