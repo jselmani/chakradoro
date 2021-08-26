@@ -18,6 +18,14 @@ const TimerControls = () => {
     const notificationUrl = 'https://www.soundjay.com/misc/sounds/bell-ringing-04.mp3';
     const notificationRef = useRef();
 
+    const handlePauseAndPlay = () => {
+        dispatch({
+            ...state,
+            type: actionTypes.TOGGLE_BUSY,
+            isBusy: !state.isBusy
+        });
+    };
+
     const handleReset = () => {
         dispatch({
             ...state,
@@ -33,8 +41,9 @@ const TimerControls = () => {
             type: actionTypes.START_TIMER,
             timerValue: timerValue - 1
         }); 
-        if(timerValue === 0) notificationRef.current.play();
-        if(timerValue < 0) {
+        
+        if(timerValue === 0) {
+            notificationRef.current.play();
             if(timerLabel === 'Session') {
                 dispatch({
                     ...state,
@@ -59,14 +68,6 @@ const TimerControls = () => {
                 });
             }
         }
-    };
-
-    const handlePauseAndPlay = () => {
-        dispatch({
-            ...state,
-            type: actionTypes.TOGGLE_BUSY,
-            isBusy: !state.isBusy
-        });
     };
 
     useEffect(() => {

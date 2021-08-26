@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import { useStateValue } from '../../contexts/stateProvider';
 import { useTimer } from '../../hooks/useTimer';
 import BreakControls from '../BreakControls/BreakControls.component';
+import SessionControls from '../SessionControls/SessionControls.component';
 import TimerControls from '../TimerControls/TimerControls.component';
 import Title from '../Title/Title.component';
 
@@ -27,7 +28,7 @@ const Timer = () => {
                 </Box>
                 <Box mx="1em">
                     <Title size="md" text="Session Length" paddingX=".6em" paddingY=".5em"/>
-                    <BreakControls />
+                    <SessionControls />
                 </Box>
             </Flex>
         </Fragment>

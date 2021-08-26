@@ -3,7 +3,7 @@ export const initialState = {
     githubUsername: 'jselmani',
     githubUrl: 'https://github.com/jselmani',
     timerLabel: 'Session',
-    isBusy: 'false',
+    isBusy: false,
     breakValue: 5,
     sessionValue: 25,
     timerValue: 1500 // 25 * 60 to give value in seconds
@@ -23,17 +23,17 @@ export const actionTypes = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
+        case actionTypes.RESET_TIMER:
+            return initialState;
         case actionTypes.START_TIMER:
             return {
                 ...state,
                 timerValue: action.timerValue
             };
-        case actionTypes.RESET_TIMER:
-            return initialState;
         case actionTypes.TOGGLE_TIMER_LABEL:
             return {
                 ...state,
-                timerLabel: actionTypes.timerLabel
+                timerLabel: action.timerLabel
             };
         case actionTypes.TOGGLE_BUSY:
             return {
@@ -50,7 +50,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DECREASE_SESSION_VALUE:
             return {
                 ...state,
-                sessionValue: action.sessionValue
+                sessionValue: action.sessionValue,
+                timerValue: action.timerValue
             };
         case actionTypes.SET_PROJECT_NAME:
             return {
