@@ -1,9 +1,9 @@
 import { Heading } from '@chakra-ui/react';
 
 const Title = props => {
-    const { size, text } = props;
+    const { size, text, paddingX, paddingY } = props;
     return (
-        <Heading size={size}>
+        <Heading size={size} px={paddingX} py={paddingY}>
             { text }
         </Heading>
     );
