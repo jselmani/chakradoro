@@ -8,7 +8,7 @@ const Credit = () => {
     return (
         <Box pt="1em">
             <Text fontSize="lg" fontWeight="semibold">
-                Developed for fun by{' '}
+                Developed with ❤️ by{' '}
                 <Link href={githubUrl} isExternal>
                     {githubUsername}
                 </Link>

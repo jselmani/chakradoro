@@ -9,7 +9,7 @@ import { useTimer } from "../../hooks/useTimer";
 import { useStateValue } from "../../contexts/stateProvider";
 import { actionTypes } from "../../reducer/reducer";
 
-const TimerControls = () => {
+const TimerControls = ({ iconColor }) => {
 
     const[{ projectName, timerValue, breakValue, sessionValue, isBusy, timerLabel}] = useStateValue();
     const [state, dispatch] = useStateValue();
@@ -89,12 +89,20 @@ const TimerControls = () => {
                 isRound 
                 onClick={handlePauseAndPlay} 
                 icon={!isBusy ? <FaPlay /> : <FaPause />}
+                color={iconColor}
+                _hover={{
+                    transform: "scale(1.1)"
+                }}
             />
             <IconButton 
                 size="lg" 
                 isRound 
                 onClick={handleReset} 
                 icon={<FaRedoAlt />}
+                color={iconColor}
+                _hover={{
+                    transform: "scale(1.1)"
+                }}
             />
             <audio src={notificationUrl} ref={notificationRef} preload="auto" />
         </Flex>

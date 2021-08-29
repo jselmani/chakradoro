@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import { Fragment } from 'react';
 
 import { useStateValue } from '../../contexts/stateProvider';
@@ -12,23 +12,26 @@ const Timer = () => {
     
     const [{ projectName, timerLabel }] = useStateValue();
     const timeredValue = useTimer();
+    const boxColor = useColorModeValue('red.500', 'gray.900');
+    const sessionTitleColor = useColorModeValue('gray.100');
+    const iconColor = useColorModeValue('red.500');
 
     return (
         <Fragment>
-            <Title size="lg" text={projectName} />
-            <Box p="2em" m="2rem" borderRadius="30px" border="2px" align="center">
-                <Title size="md" text={timerLabel} />
-                <Title size="3xl" text={timeredValue} paddingX="10px" paddingY="10px"/>
+            <Title size="xl" text={projectName} />
+            <Box p="2em" m="2rem" borderRadius="50px" align="center" boxShadow="base" bg={boxColor}>
+                <Title size="lg" text={timerLabel} color={sessionTitleColor}/>
+                <Title size="3xl" text={timeredValue} paddingX="10px" paddingY="10px" color={sessionTitleColor}/>
                 <TimerControls />
             </Box>
             <Flex flexDirection="row" justifyContent="center">
                 <Box mx="1em">
                     <Title size="md" text="Break Length" paddingX="1em" paddingY=".5em"/>
-                    <BreakControls />
+                    <BreakControls iconColor={iconColor}/>
                 </Box>
                 <Box mx="1em">
                     <Title size="md" text="Session Length" paddingX=".6em" paddingY=".5em"/>
-                    <SessionControls />
+                    <SessionControls iconColor={iconColor}/>
                 </Box>
             </Flex>
         </Fragment>
