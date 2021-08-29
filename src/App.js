@@ -2,17 +2,17 @@ import React from 'react';
 import {
   ChakraProvider,
   Flex,
-  theme,
 } from '@chakra-ui/react';
 
 import ColorModeSwitcher from './components/ColorModeSwitcher/ColorModeSwitcher.component';
 import DataContainer from './components/DataContainer/DataContainer.component';
 import Timer from './components/Timer/Timer.component';
 import Credit from './components/Credit/Credit.component';
+import { ChakradoroTheme } from './styles/theme';
 
 const App = () => {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={ChakradoroTheme}>
       <Flex flexDirection="row" justifyContent="flex-end">
         <ColorModeSwitcher justifySelf="end" />
       </Flex>

@@ -5,7 +5,7 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import { useStateValue } from '../../contexts/stateProvider';
 import { actionTypes } from '../../reducer/reducer';
 
-const BreakControls = () => {
+const BreakControls = ({ iconColor }) => {
 
     const [{ breakValue, isBusy }] = useStateValue();
     const [state, dispatch] = useStateValue();
@@ -35,6 +35,10 @@ const BreakControls = () => {
                     onClick={handleDecrease}
                     isDisabled={isBusy || breakValue <= 1}
                     icon={<FaMinus />}
+                    color={iconColor}
+                    _hover={{
+                        transform: "scale(1.1)"
+                    }}
                 />
                 <Text fontSize="lg">{ breakValue }</Text>
                 <IconButton 
@@ -43,6 +47,10 @@ const BreakControls = () => {
                     onClick={handleIncrease}
                     isDisabled={isBusy || breakValue > 59}
                     icon={<FaPlus />}
+                    color={iconColor}
+                    _hover={{
+                        transform: "scale(1.1)"
+                    }}
                 />
             </Flex>
         </Fragment>

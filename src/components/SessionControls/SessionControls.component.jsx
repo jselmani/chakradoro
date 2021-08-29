@@ -5,7 +5,7 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import { useStateValue } from '../../contexts/stateProvider';
 import { actionTypes } from '../../reducer/reducer';
 
-const SessionControls = () => {
+const SessionControls = ({ iconColor }) => {
     const [{ sessionValue, isBusy }] = useStateValue();
     const [state, dispatch] = useStateValue();
 
@@ -36,6 +36,10 @@ const SessionControls = () => {
                     onClick={handleDecrease}
                     isDisabled={isBusy || sessionValue <= 1}
                     icon={<FaMinus />}
+                    color={iconColor}
+                    _hover={{
+                        transform: "scale(1.1)"
+                    }}
                 />
                 <Text fontSize="lg">{ sessionValue }</Text>
                 <IconButton 
@@ -44,6 +48,10 @@ const SessionControls = () => {
                     onClick={handleIncrease}
                     isDisabled={isBusy || sessionValue > 59}
                     icon={<FaPlus />}
+                    color={iconColor}
+                    _hover={{
+                        transform: "scale(1.1)"
+                    }}
                 />
             </Flex>
         </Fragment>

@@ -1,13 +1,12 @@
 import { extendTheme } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools'
 
 export const ChakradoroTheme = extendTheme({
-    colors: {
-        primary: '#00CFBB',
-        backgroundDark: '#344B47',
-        backgroundLight: '#96B1AC',
-        textLight: '#3887D5',
-        textDark: '#7ABCFF'
+    styles: {
+        global: (props) => ({
+            body: {
+                bg: mode('red.500', 'gray.700')(props),
+            }
+        })
     },
-    components: {}
-
 });
