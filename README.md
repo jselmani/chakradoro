@@ -14,9 +14,9 @@ You can use the timer [here](https://chakradoro-timer.vercel.app/).
 :heavy_check_mark: &nbsp; Chakra UI Components  
 :heavy_check_mark: &nbsp; Use of React Context API  
 :heavy_check_mark: &nbsp; Use of React Hooks, Chakra UI Hooks, and Custom Hooks  
-:heavy_check_mark: &nbsp; Responsive Site that can be used in Mobile format 
-:heavy_check_mark: &nbsp; Counter State in Browser Tab 
-:heavy_check_mark: &nbsp; Audio notification when Timer ends  
+:heavy_check_mark: &nbsp; Responsive Site that can be used in Mobile format  
+:heavy_check_mark: &nbsp; Counter State in Browser Tab  
+:heavy_check_mark: &nbsp; Audio notification when Timer ends   
 
 ## Technologies
 
